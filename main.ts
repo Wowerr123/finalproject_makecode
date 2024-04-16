@@ -27,6 +27,51 @@ input.onButtonPressed(Button.AB, function () {
     }
     if (currentscreen == 2) {
         basic.pause(500)
+        if (sprite.get(LedSpriteProperty.X) == 1) {
+            if (c1taken == 1) {
+                spritec1.set(LedSpriteProperty.X, sprite.get(LedSpriteProperty.X))
+                spritec1.set(LedSpriteProperty.Y, sprite.get(LedSpriteProperty.Y))
+            } else {
+                spritec1 = game.createSprite(sprite.get(LedSpriteProperty.X), sprite.get(LedSpriteProperty.Y))
+                c1taken = 1
+            }
+        }
+        if (sprite.get(LedSpriteProperty.X) == 2) {
+            if (c2taken == 1) {
+                spritec2.set(LedSpriteProperty.X, sprite.get(LedSpriteProperty.X))
+                spritec2.set(LedSpriteProperty.Y, sprite.get(LedSpriteProperty.Y))
+            } else {
+                spritec2 = game.createSprite(sprite.get(LedSpriteProperty.X), sprite.get(LedSpriteProperty.Y))
+                c2taken = 1
+            }
+        }
+        if (sprite.get(LedSpriteProperty.X) == 3) {
+            if (c3taken == 1) {
+                spritec3.set(LedSpriteProperty.X, sprite.get(LedSpriteProperty.X))
+                spritec3.set(LedSpriteProperty.Y, sprite.get(LedSpriteProperty.Y))
+            } else {
+                spritec3 = game.createSprite(sprite.get(LedSpriteProperty.X), sprite.get(LedSpriteProperty.Y))
+                c3taken = 1
+            }
+        }
+        if (sprite.get(LedSpriteProperty.X) == 4) {
+            if (c4taken == 1) {
+                spritec4.set(LedSpriteProperty.X, sprite.get(LedSpriteProperty.X))
+                spritec4.set(LedSpriteProperty.Y, sprite.get(LedSpriteProperty.Y))
+            } else {
+                spritec4 = game.createSprite(sprite.get(LedSpriteProperty.X), sprite.get(LedSpriteProperty.Y))
+                c4taken = 1
+            }
+        }
+        if (sprite.get(LedSpriteProperty.X) == 5) {
+            if (c5taken == 1) {
+                spritec5.set(LedSpriteProperty.X, sprite.get(LedSpriteProperty.X))
+                spritec5.set(LedSpriteProperty.Y, sprite.get(LedSpriteProperty.Y))
+            } else {
+                spritec5 = game.createSprite(sprite.get(LedSpriteProperty.X), sprite.get(LedSpriteProperty.Y))
+                c5taken = 1
+            }
+        }
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -50,6 +95,16 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 let mousex = 0
+let spritec5: game.LedSprite = null
+let c5taken = 0
+let spritec4: game.LedSprite = null
+let c4taken = 0
+let spritec3: game.LedSprite = null
+let c3taken = 0
+let spritec2: game.LedSprite = null
+let c2taken = 0
+let spritec1: game.LedSprite = null
+let c1taken = 0
 let sprite: game.LedSprite = null
 let mousey = 0
 let scrolldata = 0
