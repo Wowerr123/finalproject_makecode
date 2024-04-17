@@ -115,7 +115,27 @@ def on_gesture_shake():
         music.play(value, music.PlaybackMode.UNTIL_DONE)
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
 
+def on_logo_pressed():
+    global currentscreen, scrolldata, spriteforeverscreenstop, c1taken, c2taken, c3taken, c4taken, c5taken, screentwostuffallowed, storedsongs, _2ndstorenotes
+    currentscreen = 1
+    scrolldata = 1
+    spriteforeverscreenstop = 1
+    c1taken = 0
+    c2taken = 0
+    c3taken = 0
+    c4taken = 0
+    c5taken = 0
+    screentwostuffallowed = 0
+    storedsongs = 0
+    _2ndstorenotes = []
+    for value2 in storednotes:
+        _2ndstorenotes.append("" + str(value2))
+        print(value2)
+        print(_2ndstorenotes)
+input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_pressed)
+
 pressuresensorvalue = 0
+_2ndstorenotes: List[str] = []
 mousex = 0
 spritec5: game.LedSprite = None
 spritec4: game.LedSprite = None
@@ -124,6 +144,7 @@ spritec2: game.LedSprite = None
 spritec1: game.LedSprite = None
 sprite2: game.LedSprite = None
 mousey = 0
+storedsongs = 0
 storednotes: List[music.Playable] = []
 screentwostuffallowed = 0
 c5taken = 0
@@ -131,8 +152,10 @@ c4taken = 0
 c3taken = 0
 c2taken = 0
 c1taken = 0
+spriteforeverscreenstop = 0
 scrolldata = 0
 currentscreen = 0
+formattedstorednotes = ""
 currentscreen = 1
 scrolldata = 1
 spriteforeverscreenstop = 1
@@ -143,16 +166,9 @@ c4taken = 0
 c5taken = 0
 screentwostuffallowed = 0
 storednotes = []
+storedsongs = 0
 
 def on_forever():
-    with open('storedsongs.txt', 'w') as file:
-        file.write("test")  # Write an empty string to create the file if it doesn't exist
-    basic.pause(1000)  # Pause for 1 second to ensure file creation
-    # Add other code here
-basic.forever(on_forever)
-
-
-def on_forever2():
     global sprite2, spriteforeverscreenstop, screentwostuffallowed, pressuresensorvalue
     if currentscreen == 1:
         # Change the number to how many options  you can scroll through.
@@ -174,4 +190,4 @@ def on_forever2():
         sprite2.set(LedSpriteProperty.BLINK, 400)
         screentwostuffallowed = 1
     pressuresensorvalue = pins.digital_read_pin(DigitalPin.P1)
-basic.forever(on_forever2)
+basic.forever(on_forever)
