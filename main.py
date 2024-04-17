@@ -135,7 +135,6 @@ def on_logo_pressed():
 input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_pressed)
 
 pressuresensorvalue = 0
-_2ndstorenotes: List[str] = []
 mousex = 0
 spritec5: game.LedSprite = None
 spritec4: game.LedSprite = None
@@ -156,6 +155,7 @@ spriteforeverscreenstop = 0
 scrolldata = 0
 currentscreen = 0
 formattedstorednotes = ""
+_2ndstorenotes: List[str] = []
 currentscreen = 1
 scrolldata = 1
 spriteforeverscreenstop = 1
